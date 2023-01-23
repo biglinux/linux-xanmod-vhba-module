@@ -9,7 +9,7 @@ _linuxprefix=linux-xanmod
 _extramodules=$(find /usr/lib/modules -type d -iname 6.1.7*xanmod* | rev | cut -d "/" -f1 | rev)
 pkgname=$_linuxprefix-vhba-module
 _pkgname=vhba-module
-pkgver=470.161.03
+pkgver=20211218
 pkgrel=6171
 pkgdesc="Kernel module that emulates SCSI devices"
 arch=('x86_64')
@@ -22,8 +22,8 @@ groups=("$_linuxprefix-extramodules")
 install=$_pkgname.install
 source=("http://downloads.sourceforge.net/cdemu/$_pkgname-$pkgver.tar.xz"
         '60-vhba.rules')
-sha256sums=(SKIP SKIP)
-
+sha256sums=('72c5a8c1c452805e4cef8cafefcecc2d25ce197ae4c67383082802e5adcd77b6'
+            '3052cb1cadbdf4bfb0b588bb8ed80691940d8dd63dc5502943d597eaf9f40c3b')
 
 prepare() {
   cd "$_pkgname-$pkgver"
