@@ -1,0 +1,20 @@
+EXTRAMODULES=$(find /usr/lib/modules -type d -iname 6.1.7*xanmod* | rev | cut -d "/" -f1 | rev)
+
+_updatemod() {
+  echo "  > Updating module dependencies..."
+  depmod $(find /usr/lib/modules -type d -iname 6.1.7*xanmod* | rev | cut -d "/" -f1 | rev)
+}
+
+post_install() {
+  post_upgrade
+}
+
+post_upgrade() {
+  getent group cdemu &>/dev/null || groupadd -r cdemu
+  _updatemod
+}
+
+post_remove() {
+  _updatemod
+  groupdel cdemu
+}
