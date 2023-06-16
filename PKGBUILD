@@ -6,11 +6,11 @@
 # Charles Lindsay <charles@chaoslizard.org>
 
 _linuxprefix=linux-xanmod
-_extramodules=$(find /usr/lib/modules -type d -iname 6.3.7*xanmod* | rev | cut -d "/" -f1 | rev)
+_extramodules=$(find /usr/lib/modules -type d -iname 6.3.8*xanmod* | rev | cut -d "/" -f1 | rev)
 pkgname=$_linuxprefix-vhba-module
 _pkgname=vhba-module
 pkgver=20211218
-pkgrel=63710
+pkgrel=63810
 pkgdesc="Kernel module that emulates SCSI devices"
 arch=('x86_64')
 url="http://cdemu.sourceforge.net/"
@@ -30,7 +30,7 @@ prepare() {
 }
 
 build() {
-  _kernver=$(find /usr/lib/modules -type d -iname 6.3.7*xanmod* | rev | cut -d "/" -f1 | rev)
+  _kernver=$(find /usr/lib/modules -type d -iname 6.3.8*xanmod* | rev | cut -d "/" -f1 | rev)
 
   cd "$_pkgname-$pkgver"
   make -j1 KDIR=/usr/lib/modules/${_kernver}/build
