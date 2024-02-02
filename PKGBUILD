@@ -6,7 +6,7 @@
 # Charles Lindsay <charles@chaoslizard.org>
 
 _linuxprefix=linux-xanmod
-_kernver="$(cat /usr/src/${_linuxprefix}//build/version)"
+_kernver=$(find /usr/lib/modules -type d -iname 6.6.15*xanmod* | rev | cut -d "/" -f1 | rev)
 pkgname=$_linuxprefix-vhba-module
 _pkgname=vhba-module
 pkgver=20211218
