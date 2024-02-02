@@ -29,6 +29,7 @@ prepare() {
 }
 
 build() {
+  _kernver="$(cat /usr/src/${_linuxprefix}/version)"
 
   cd "$_pkgname-$pkgver"
   make -j1 KDIR=/usr/lib/modules/${_kernver}/build
