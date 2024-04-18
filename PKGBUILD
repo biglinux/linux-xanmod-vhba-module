@@ -1,17 +1,16 @@
 # Maintainer: Philip Müller <philm[at]manjaro[dot]org>
 # Maintainer: Bernhard Landauer <bernhard@manjaro.org>
-
-# Arch credits:
-# Ray Rashif <schiv@archlinux.org>
-# Mateusz Herych <heniekk@gmail.com>
-# Charles Lindsay <charles@chaoslizard.org>
+# Contributor: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Contributor: Ray Rashif <schiv@archlinux.org>
+# Contributor: Mateusz Herych <heniekk@gmail.com>
+# Contributor: Charles Lindsay <charles@chaoslizard.org>
 
 _linuxprefix=linux-xanmod
 
 _module=vhba-module
 pkgname="${_linuxprefix}-${_module}"
 pkgver=20240202
-pkgrel=68610
+pkgrel=68710
 pkgdesc="Kernel module that emulates SCSI devices"
 arch=('x86_64')
 url="https://cdemu.sourceforge.io/"
