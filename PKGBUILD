@@ -10,7 +10,7 @@ _linuxprefix=linux-xanmod
 _module=vhba-module
 pkgname="${_linuxprefix}-${_module}"
 pkgver=20240917
-pkgrel=610121
+pkgrel=61121
 pkgdesc="Kernel module that emulates SCSI devices"
 arch=('x86_64')
 url="https://cdemu.sourceforge.io/"
@@ -21,6 +21,10 @@ provides=("${_module}=$pkgver" "VHBA-MODULE")
 groups=("${_linuxprefix}-extramodules")
 source=("http://downloads.sourceforge.net/cdemu/${_module}-$pkgver.tar.xz")
 sha256sums=('ce34cbae2c36cef8d7d09c5f6bd42d6871b9b530bb70b4ca100f964823fe0e98')
+
+prepare() {
+  cd "${_module}-$pkgver"
+}
 
 build() {
   _kernver="$(cat /usr/src/${_linuxprefix}/version)"
